@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: colorapp
+spec:
+  selector:
+    matchLabels:
+      app: colorapp
+  template:
+    metadata:
+      labels:
+        app: colorapp
+    spec:
+      containers:
+        - name: colorapp
+          image: docker pull omarvides/backend-color-api
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "150m"
+          ports:
+            - containerPort: 3000

@@ -11,4 +11,8 @@ app.get('/color', (req, res) =>
     values: [color, '#b1f150', '#a77d46', '#74c4db', '#fbbdd3', '#9b0bad'],
   })
 );
+app.get('/health', (req, res) => {
+  res.status = 200;
+  res.send('Healthy');
+});
 app.listen(port, () => console.log(`Backend app listening in port ${port}`));
